@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --max-width: 1200px;
+}
+.section__container {
+  max-width: var(--max-width);
+  margin: auto;
+  /* position: relative; */
+  /* margin: 0 4rem; */
+  padding: 5rem 1rem;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #fff;
+}
+*::selection {
+  background-color: #fff;
+  color: #2f86e9;
+}
+body::-webkit-scrollbar {
+  display: block;
+  background-color: #000;
+  width: 9px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #3072c7;
+  border-radius: 50px;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  font-family: "montserrat";
+}
+nav {
+  position: fixed;
+  width: 100%;
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2vw 15vw;
+  /* background-color: black; */
+  height: 12vh;
+  z-index: 99;
+}
+nav h1 {
+  color: #fff;
+}
+nav ul li {
+  list-style-type: none;
+}
+ul {
+  display: flex;
+  gap: 2.5vw;
+}
+ul li {
+  font-size: 0.9vw;
+  font-weight: 900;
+  margin-bottom: 2.6vw;
+}
+ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+.nav-element h5 {
+  color: #fff;
+}
+.nav-part2 {
+  display: flex;
+  align-items: flex-start;
+  gap: 2vw;
+  padding: 1vh 0;
+  position: relative;
+
+  z-index: 10;
+}
+.nav-part2 h5 {
+  margin-bottom: 0.5vw;
+  /* opacity: 0; */
+  display: none;
+  overflow: hidden;
+}
+.nav-part2 h5 span {
+  font-weight: 500;
+  font-size: 0.77vw;
+  display: inline-block;
+  transform: translateY(25px);
+  cursor: pointer;
+}
+.nav-part2 h5 span:hover {
+  font-weight: 580;
+}
+#nav-bottom {
+  height: 0vh;
+  width: 70%;
+  top: 100%;
+  position: absolute;
+
+  border-bottom: 2px solid #fff;
+
+  z-index: 9;
+}
+button {
+  font-size: 12px;
+  position: relative;
+  /* margin: auto; */
+  padding: 1em 2.5em 1em 2.5em;
+  border: none;
+  background: #fff;
+  transition: all 0.1s linear;
+  box-shadow: 0 0.4em 1em rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button span {
+  color: #464646;
+}
+
+button .border {
+  position: absolute;
+  border: 0.15em solid #fff;
+  transition: all 0.3s 0.08s linear;
+  top: 50%;
+  left: 50%;
+  width: 9em;
+  height: 3em;
+  transform: translate(-50%, -50%);
+}
+
+button:hover .border {
+  display: block;
+  width: 9.9em;
+  height: 3.7em;
+}
+
+.full-rounded {
+  border-radius: 2em;
+}
+
+.header__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 20vh;
+  transition-delay: 0.5s;
+}
+
+.header__image img {
+  max-width: 550px;
+  margin-inline: auto;
+}
+
+.header__content {
+  max-width: 600px;
+}
+
+.header__content h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+#Effortlessly {
+  font-weight: 800;
+  color: #fff;
+
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+}
+
+.header__content h1 {
+  margin-bottom: 1rem;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 4rem;
+  /* color: var(--text-dark); */
+  color: #000;
+  /* font-size: 50px; */
+  text-shadow: -1px 1px 0 #fff, 1px 1px 0 #fff, 1px -1px 0 #fff,
+    -1px -1px 0 #fff;
+}
+
+.header__content p {
+  margin-bottom: 2rem;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: var(--text-light);
+}
+
+.header__btns {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header__btns img {
+  max-width: 150px;
+  border-radius: 0.25rem;
+}
+
+#cursor {
+  height: 20px;
+  width: 20px;
+  position: fixed;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+  z-index: 20;
+}
+
+#cursor-blur {
+  height: 500px;
+  width: 500px;
+  position: fixed;
+  background-color: rgba(85, 135, 243, 0.527);
+  filter: blur(80px);
+  border-radius: 50%;
+  z-index: 10;
+}

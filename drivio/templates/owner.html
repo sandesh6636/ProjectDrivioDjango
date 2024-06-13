@@ -1,0 +1,102 @@
+ {% extends "layout.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'css/owner.css' %}" />
+    <title>Salow Studios | Axolotl pop</title>
+  </head>
+
+  <body>
+    <nav id="nav">
+      <h1>DRIVIO.</h1>
+      <div class="nav-part2">
+        <ul>
+          <div class="nav-element">
+            <li><a href="index.html">HOME-DRIVIO</a></li>
+            <h5><span id="home">HOME-DRIVIO</span></h5>
+          </div>
+          <div class="nav-element">
+            <li><a href="">SERVICS-DRIVIO.</a></li>
+            <h5><span>DERIVER-SERVICE</span></h5>
+            <h5><span>OWNER-SERVICE</span></h5>
+          </div>
+          <div class="nav-element">
+            <li><a href="">ABOUT-US</a></li>
+            <h5><span id="our-a">OUR-AMBITION</span></h5>
+            <h5><span id="our-f">OUR-FOCUS</span></h5>
+            <h5><span id="our-i">OUR-IMPACT</span></h5>
+          </div>
+          <div class="nav-element">
+            <li><a href="contact.html">CONTACT-US</a></li>
+          </div>
+        </ul>
+      </div>
+      <button class="full-rounded">
+        <span>START</span>
+        <div class="border full-rounded"></div>
+      </button>
+      <div id="nav-bottom"></div>
+    </nav>
+
+    <header class="section__container header__container">
+      <div class="header__content">
+        <h1>
+          Connect with Trusted Drivers
+          <span id="Effortlessly">Effortlessly</span>
+        </h1>
+        <p>
+          Finding the right driver for your vehicle shouldn't be a hassle.
+          DRIVIO simplifies the process by connecting you with vetted,
+          trustworthy drivers in just a few clicks. Our user-friendly platform
+          allows you to upload your vehicle details, browse driver profiles, and
+          establish connections quickly and securely. Experience the convenience
+          of DRIVIO and ensure your vehicle is always in capable hands.
+        </p>
+        <div class="header__btns">
+          <a href="#">
+            <img src="{% static 'img/google-play.jpg'%}" alt="Google Play" />
+          </a>
+          <a href="#">
+            <img src="{% static 'img/app-store.jpg'%}" alt="App Store" />
+          </a>
+        </div>
+      </div>
+      <div class="header__image">
+        <img src="{% static 'img/ownerGif.gif'%}"header" />
+      </div>
+    </header>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="js/owner.js"></script>
+  </body>
+</html>
+{% endblock %}
