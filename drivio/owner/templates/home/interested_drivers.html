@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Interested Drivers for {{ car.car_name }}</h2>
+  <ul>
+    {% for driver in interested_drivers %}
+      <li>
+        <p>Name: {{ driver.name }}</p>
+        <p>Age: {{ driver.age }}</p>
+        <p>Contact: {{ driver.contact }}</p>
+        <p>Location: {{ driver.location }}</p>
+        <img src="{{ driver.profile_picture.url }}" alt="Profile Picture">
+        <img src="{{ driver.driving_license_front.url }}" alt="Driving License Front">
+        <img src="{{ driver.driving_license_back.url }}" alt="Driving License Back">
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

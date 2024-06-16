@@ -19,16 +19,16 @@ from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
-# from app1 import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home, name="home"),
-    path('about/',views.about,name="about"),
+    path('owner/',views.owner,name="owner"),
     path('driving/',views.driver,name="driver"),
     path('register',views.SignupPage,name='signup'),
     path('login/',views.LoginPage,name='login'),
-    # path('home/',views.HomePage,name='home'),
     path('logout/',views.LogoutPage,name='logout'),
-    # path('chaii/',include('app.urls')),
+     path('', include('owner.urls')),
+   path('drivers/', include('driver.urls')),
 ]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

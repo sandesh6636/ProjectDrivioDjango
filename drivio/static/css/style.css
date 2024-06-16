@@ -124,6 +124,7 @@
     color: #464646;
   }
   
+  
   button .border {
     position: absolute;
     border: 0.15em solid #fff;
@@ -144,6 +145,7 @@
   .full-rounded {
     border-radius: 2em;
   }
+  
   video {
     height: 100%;
     width: 100%;

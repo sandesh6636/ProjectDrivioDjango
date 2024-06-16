@@ -23,19 +23,21 @@
     <div class="nav-part2">
       <ul>
         <div class="nav-element">
-          <li><a href="">HOME-DRIVIO</a></li>
+          <li><a href="{% url 'home' %}">HOME-DRIVIO</a></li>
           <h5><span>HOME-DRIVIO</span></h5>
         </div>
         <div class="nav-element">
           <li><a href="">SERVICS-DRIVIO.</a></li>
-          <h5><span id="driver">DERIVER-SERVICE</span></h5>
-          <h5><span id="owner">OWNER-SERVICE</span></h5>
+          <h5><a href="{% url 'driver'%}"><span id="driver">DERIVER-SERVICE</span></a></h5>
+          <h5><a href="{%url 'owner'%}"><span id="owner">OWNER-SERVICE</span></a></h5>
         </div>
         <div class="nav-element">
-          <li><a href="">ABOUT-US</a></li>
-          <h5><span id="our-a">OUR-AMBITION</span></h5>
-          <h5><span id="our-f">OUR-FOCUS</span></h5>
-          <h5><span id="our-i">OUR-IMPACT</span></h5>
+          <li><a href="#about-us">ABOUT-US</a></li>
+          <h5><a href="#cards-container"><span id="our-a">OUR-AMBITION</span></a></h5>
+          <h5><a href="#cards-container"><span id="our-a">OUR-FOCUS</span></a></h5>
+          <h5><a href="#cards-container"><span id="our-a">OUR-IMPACT</span></a></h5>
+          {% comment %} <h5><span id="our-f">OUR-FOCUS</span></h5> {% endcomment %}
+          {% comment %} <h5><span id="our-i">OUR-IMPACT</span></h5> {% endcomment %}
         </div>
         <div class="nav-element">
           <li><a href="contact.html">CONTACT-US</a></li>
@@ -44,10 +46,12 @@
         </div>
       </ul>
     </div>
-    <button class="full-rounded">
-      <span  id='start'>START</span>
+
+    <button class="full-rounded" id="start">
+      <a href="{% url 'login' %}"><span id='start'>START</span></a>
       <div class="border full-rounded"></div>
     </button>
+    
     <div id="nav-bottom"></div>
   </nav>
   <video autoplay loop muted src="{% static 'img/Hero.mp4'%}"></video>
@@ -160,14 +164,14 @@
       </div>
      
       
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      {% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
         integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
         integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-      <script src="{% static 'js/script.js'%}"></script>
+      <script src="{% static 'js/script.js'%}"></script> {% endcomment %}
 </body>
 
 </html>

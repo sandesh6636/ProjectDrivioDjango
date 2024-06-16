@@ -10,24 +10,22 @@ const btn_o = document.querySelector("#owner");
 const btn_d = document.querySelector("#driver");
 const btn_start = document.querySelector("#start");
 
-btn_start.addEventListener("click", () => {
-  window.location.href = "{% url 'loign' %}";
-});
+// btn_start.addEventListener("click", () => {
+//   window.location.href = "login";
+// });
 // btn_a.addEventListener("click", () => {
 //   window.location.href = "#card1";
 // });
 // btn_f.addEventListener("click", () => {
 //   window.location.href = "#card2";
 // });
-btn_o.addEventListener("click", () => {
-  window.location.href = "owner.html";
-});
-btn_d.addEventListener("click", () => {
-  window.location.href = "driver.html";
-});
-btn_c.addEventListener("click", () => {
-  window.location.href = "contact.html";
-});
+// btn_o.addEventListener("click", () => {
+//   window.location.href = "{% url 'owner'%}";
+// });
+// btn_d.addEventListener("click", () => {
+//   window.location.href = "{% driver %}";
+// });
+
 document.addEventListener("mousemove", function (delts) {
   crs.style.left = delts.x + 20 + "px";
   crs.style.top = delts.y + 20 + "px";
