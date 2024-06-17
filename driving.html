@@ -1,0 +1,201 @@
+{% extends "layout.html" %} 
+{% load static %}
+{% block title %} Driving Service {% endblock %} 
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <link rel="stylesheet" href="{% static 'css/driving.css'%}">
+    <link rel="stylesheet" href="{% static 'css/drivings.css'%}">
+    <title>Driver Services</title>
+</head>
+
+<body>
+    <nav id="nav">
+        <h1>DRIVIO.</h1>
+        <div class="nav-part2">
+            <ul>
+                <div class="nav-element">
+                    <li><a href="{% url 'home' %}">HOME-DRIVIO</a></li>
+                    <h5><span id="home">HOME-DRIVIO</span></h5>
+                </div>
+                <div class="nav-element">
+                    <li><a href="#">SERVICES-DRIVIO.</a></li>
+                    <h5><span>DRIVER-SERVICE</span></h5>
+                    <h5><span>OWNER-SERVICE</span></h5>
+                </div>
+                <div class="nav-element">
+                    <li><a href="#">ABOUT-US</a></li>
+                    <h5><span id="our-a">OUR-AMBITION</span></h5>
+                    <h5><span id="our-f">OUR-FOCUS</span></h5>
+                    <h5><span id="our-i">OUR-IMPACT</span></h5>
+                </div>
+                <div class="nav-element">
+                    <li><a href="contact.html">CONTACT-US</a></li>
+                </div>
+            </ul>
+        </div>
+        <button class="full-rounded">
+            <span>START</span>
+            <div class="border full-rounded"></div>
+        </button>
+        <div id="nav-bottom"></div>
+    </nav>
+
+    <header class="section__container header__container" data-aos="fade-down">
+        <div class="header__content">
+            <h1>
+                Connect with Trusted Owner
+                <span id="Effortlessly">Effortlessly</span>
+            </h1>
+            <p>
+                Finding the right job for your driving skills shouldn't be a hassle. 
+                DRIVIO simplifies the process by connecting you with vetted, trustworthy 
+                vehicle owners in just a few clicks. Our user-friendly platform allows you 
+                to create a driver profile, browse available job listings, and establish 
+                connections quickly and securely. Experience the convenience of DRIVIO and 
+                ensure you're always in demand with reliable job opportunities.
+            </p>
+            <div class="header__btns" data-aos="fade-down">
+                <a href="#">
+                    <img src="{% static 'img/google.png' %}" alt="Google Play" />
+                </a>
+                <a href="#">
+                    <img src="{% static 'img/app.png' %}" alt="App Store" />
+                </a>
+            </div>
+        </div>
+        <div class="header__image" data-aos="fade-down">
+            <img src="{% static 'img/vi1.webp'%}" />
+        </div>
+    </header>
+
+    <section data-aos="fade-up">
+        <h3 class="title">Our Services and Features</h3>
+        <p>
+            Drivo provides drivers with easy job browsing and application capabilities, while allowing vehicle owners to
+            efficiently post job opportunities, search for qualified candidates, and manage communications. The platform
+            ensures secure transactions and fosters trust through its rating and review system, enhancing reliability in
+            the driving community.
+        </p>
+        <hr>
+    </section>
+
+    <section id="sec">
+        <!-- <div class="row">
+            <h2 class="section-heading">Our Services</h2><br>
+        </div> -->
+        <div class="row">
+            <div class="column" data-aos="fade-left">
+                <div class="card">
+                    <div class="icon-wrapper">
+                        <i class="fa-solid fa-comments"></i>
+                    </div><br>
+                    <h3>Real Time Notification</h3>
+                    <p>
+                        On Drivo, when a vehicle owner picks a driver for a job, the app quickly notifies the driver
+                        with all the details: where and when to start, and what needs to be done. This helps drivers be
+                        ready and respond fast, making everything smoother and customers happier.
+                    </p>
+                </div>
+            </div>
+            <div class="column" data-aos="fade-left">
+                <div class="card">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-brush"></i>
+                    </div><br>
+                    <h3>Job Matching</h3>
+                    <p>
+                        Drivo app efficiently connects drivers with suitable job opportunities based on location,
+                        availability, and vehicle type. Matching drivers with suitable jobs helps everyone find the
+                        right fit quickly. This makes the process smoother and saves time.
+                    </p>
+                </div>
+            </div>
+            <div class="column" data-aos="fade-left">
+                <div class="card">
+                    <div class="icon-wrapper">
+                        <i class="fa-solid fa-comment-dots"></i>
+                    </div><br>
+                    <h3>Owner Feedback</h3>
+                    <p>
+                        Drivers on Drivo receive ratings and feedback from car owners. This ongoing process fosters
+                        improvement, boosting trust across the user base. It helps drivers continuously refine their 
+                        skills and consistently meet customer expectations effectively.
+                    </p>
+                </div>
+            </div>
+            <div class="column" data-aos="fade-right">
+                <div class="card">
+                    <div class="icon-wrapper">
+                        <i class="fa-solid fa-credit-card"></i>
+                    </div><br>
+                    <h3>Payment Process</h3>
+                    <p>
+                        This system ensures drivers get paid promptly and securely through online and offline transactions,
+                        fostering trust and efficiency. Owners are reminded to pay promptly. This process helps maintain a 
+                        reliable and transparent payment system.
+                    </p>
+                </div>
+            </div>
+            <div class="column" data-aos="fade-right">
+                <div class="card">
+                    <div class="icon-wrapper">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div><br>
+                    <h3>Performance</h3>
+                    <p>
+                       
+                    Drivers on Drivo can track their performance metrics, enabling them to monitor efficiency trends. 
+                    This feature helps drivers proactively monitor their progress, make informed decisions to enhance 
+                    performance, maximize their earnings, and strive for continuous improvement.
+                    </p>
+                </div>
+            </div>
+            <div class="column" data-aos="fade-right">
+                <div class="card">
+                    <div class="icon-wrapper">
+                        <i class="fa-solid fa-circle-info"></i>
+                    </div><br>
+                    <h3>In App Support</h3>
+                    <p>
+                        In-App Support on Drivo is dedicated to assisting drivers and owners with platform-related queries and issues promptly.
+                        Whether it's technical problems, troubleshooting, or many other details, this service boosts driver and owner satisfaction 
+                        by ensuring smooth operations.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({});
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="js/owner.js"></script>
+</body>
+
+</html>
+{% endblock %}
