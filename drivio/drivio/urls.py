@@ -26,9 +26,7 @@ urlpatterns = [
     path('',views.home, name="home"),
     path('owner/',views.owner,name="owner"),
     path('driving/',views.driver,name="driver"),
-    path('register',views.SignupPage,name='signup'),
-    path('login/',views.LoginPage,name='login'),
-    path('logout/',views.LogoutPage,name='logout'),
-     path('', include('owner.urls')),
-   path('drivers/', include('driver.urls')),
+    
+    path('', include('owner.urls')),
+    path('', include('driver.urls')),
 ]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

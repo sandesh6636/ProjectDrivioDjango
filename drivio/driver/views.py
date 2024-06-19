@@ -23,14 +23,14 @@ def register_driver(request):
         profile_form = DriverProfileForm()
     return render(request, 'driver/register.html', {'user_form': user_form, 'profile_form': profile_form})
 
-@login_required
+
 def driver_profile(request):
     profile = DriverProfile.objects.get(user=request.user)
     return render(request, 'driver/profile.html', {'profile': profile})
 
-@login_required
+
 def express_interest(request, car_id):
-    car = Car.objects.get(id=car_id)
+    car = Cars.objects.get(id=car_id)
     if request.method == 'POST':
         car.interested_drivers.add(request.user.driverprofile)
         return redirect('car_list')

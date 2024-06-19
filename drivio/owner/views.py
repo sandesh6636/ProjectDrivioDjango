@@ -5,7 +5,7 @@ from . forms import *
 from django.contrib import messages
 
 from django.contrib.auth.decorators import login_required
-from driver.models import DriverProfile
+
 
 # Create your views here.
 def index(request):
@@ -22,9 +22,11 @@ def post_car(request):
     if request.method == "POST":
         form = CarForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            cars=form.save(commit=False)
+            cars.user = request.user
+            cars.save()
             messages.add_message(request, messages.SUCCESS, 'Car added succesfully')
-            return redirect('/addCar')
+            return redirect('/main')
         else:
             messages.add_message(request, messages.ERROR, 'Kindly verify all the filds')
             return render(request, 'home/addCar.html', {'form':form})
@@ -40,9 +42,11 @@ def update_car(request, car_id):
     if request.method =="POST":
         form = CarForm(request.POST, request.FILES, instance=instance)
         if form.is_valid():
-            form.save()
+            instance=form.save(commit=False)
+            instance.user = request.user
+            instance.save()
             messages.add_message(request, messages.SUCCESS, 'Product updated successfully')
-            return redirect('/')
+            return redirect('/main')
         else:
             messages.add_message(request, messages.ERROR,"Please verify the forms")
             return render(request, 'home/addCar.html', {'form':form})
@@ -54,13 +58,5 @@ def delete_car(request, car_id):
       instance = Cars.objects.get(id=car_id)
       instance.delete()
       messages.add_message(request, messages.SUCCESS, "Product Deleted successfully")
-      return redirect('/')
+      return redirect('/addCar')
 
-
-@login_required
-def view_interested_drivers(request, car_id):
-    car = Car.objects.get(id=car_id)
-    if car.owner != request.user:
-        return HttpResponseForbidden()
-    interested_drivers = car.interested_drivers.all()
-    return render(request, 'owner/interested_drivers.html', {'car': car, 'interested_drivers': interested_drivers})
