@@ -1,0 +1,11 @@
+{% extends "layout2.html" %}
+
+
+{% block main_content %}
+<h2 class="text text-center mt-5">Are you sure want to delete??</h2>
+<form  method="post">
+    {% csrf_token %}
+    <button class="btn btn-danger">Delete</button>
+    <a href="{% url 'car_list'%}" class="btn btn-primary">Cancle</a>
+</form>
+{% endblock %}

@@ -19,6 +19,7 @@ from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
+from django.contrib.auth.urls import views as auth_views
 
 
 urlpatterns = [
@@ -27,6 +28,8 @@ urlpatterns = [
     path('owner/',views.owner,name="owner"),
     path('driving/',views.driver,name="driver"),
     
-    path('', include('owner.urls')),
-    path('', include('driver.urls')),
+    # path('', include('owner.urls')),
+    # path('', include('driver.urls')),
+    path('', include('owner2.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
