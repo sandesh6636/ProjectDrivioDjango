@@ -1,6 +1,6 @@
 {% extends "layout.html" %} 
 {% load static %}
-{% block title %} Home page {% endblock %} 
+{% block title %} DRIVIO. - Connect with trusted Driver {% endblock %} 
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
@@ -8,12 +8,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
   rel="stylesheet" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="shortcut icon" href="{% static 'img/fav.png'%}" type="image/x-icon">
   <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 </head>
 
@@ -24,7 +25,7 @@
       <ul>
         <div class="nav-element">
           <li><a href="{% url 'home' %}">HOME-DRIVIO</a></li>
-          <h5><span>HOME-DRIVIO</span></h5>
+          <h5><a href="{% url 'home'%}"><span id="our-a">HOME</span></a></h5>
         </div>
         <div class="nav-element">
           <li><a href="">SERVICS-DRIVIO.</a></li>
@@ -32,12 +33,12 @@
           <h5><a href="{%url 'owner'%}"><span id="owner">OWNER-SERVICE</span></a></h5>
         </div>
         <div class="nav-element">
-          <li><a href="#about-us">ABOUT-US</a></li>
+          <li><a href="{% url 'home'%}">ABOUT-US</a></li>
           <h5><a href="#cards-container"><span id="our-a">OUR-AMBITION</span></a></h5>
           <h5><a href="#cards-container"><span id="our-a">OUR-FOCUS</span></a></h5>
           <h5><a href="#cards-container"><span id="our-a">OUR-IMPACT</span></a></h5>
-          {% comment %} <h5><span id="our-f">OUR-FOCUS</span></h5> {% endcomment %}
-          {% comment %} <h5><span id="our-i">OUR-IMPACT</span></h5> {% endcomment %}
+        
+        
         </div>
         <div class="nav-element">
           <li><a href="contact.html">CONTACT-US</a></li>
@@ -47,11 +48,20 @@
       </ul>
     </div>
 
+    
+{% comment %}    
     <button class="full-rounded" id="start">
-      <a href=""><span id='start'>START</span></a>
+      <a href="{% url 'register'%}"><span id='start'>START</span></a>
       <div class="border full-rounded"></div>
+    </button> {% endcomment %}
+    {% comment %} <button class="button">
+      
+      <a href="{% url 'register'%}"> START</a>
+    </button> {% endcomment %}
+    <button> <a href="{% url 'register'%}">START</a>
     </button>
     
+
     <div id="nav-bottom"></div>
   </nav>
   <video autoplay loop muted src="{% static 'img/Hero.mp4'%}"></video>
@@ -164,14 +174,7 @@
       </div>
      
       
-      {% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
-        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-      <script src="{% static 'js/script.js'%}"></script> {% endcomment %}
+     
 </body>
 
 </html>

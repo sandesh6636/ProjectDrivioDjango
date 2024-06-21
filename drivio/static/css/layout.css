@@ -1,9 +1,24 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    /* color: #fff; */
-  }
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #fff;
+}
+*::selection {
+  background-color: #fff;
+  color: #2f86e9;
+}
+body::-webkit-scrollbar {
+  display: block;
+  background-color: #000;
+  width: 9px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #3072c7;
+  border-radius: 50px;
+}
+
+
 .footer {
     background-color: #000;
     color: #fff;

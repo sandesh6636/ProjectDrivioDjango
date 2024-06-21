@@ -26,6 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home, name="home"),
     path('owner/',views.owner,name="owner"),
+    path('layout/',views.layout,name="layout"),
     path('driving/',views.driver,name="driver"),
     
     # path('', include('owner.urls')),

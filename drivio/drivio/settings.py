@@ -133,8 +133,8 @@ MEDIA_URL = "/media/"
 MEDIA_ROOT= os.path.join(BASE_DIR,'media')
 
 LOGIN_URL = 'accounts/login'
-LOGIN_REDIRECT_URL = "owner2/"
-LOGOUT_REDIRECT_URL = "owner2/"
+LOGIN_REDIRECT_URL = "/show/"
+LOGOUT_REDIRECT_URL = "/show/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

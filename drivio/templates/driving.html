@@ -19,44 +19,50 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    
+  
     <link rel="stylesheet" href="{% static 'css/driving.css'%}">
     <link rel="stylesheet" href="{% static 'css/drivings.css'%}">
-    <title>Driver Services</title>
+    
 </head>
 
 <body>
     <nav id="nav">
         <h1>DRIVIO.</h1>
         <div class="nav-part2">
-            <ul>
-                <div class="nav-element">
-                    <li><a href="{% url 'home' %}">HOME-DRIVIO</a></li>
-                    <h5><span id="home">HOME-DRIVIO</span></h5>
-                </div>
-                <div class="nav-element">
-                    <li><a href="#">SERVICES-DRIVIO.</a></li>
-                    <h5><span>DRIVER-SERVICE</span></h5>
-                    <h5><span>OWNER-SERVICE</span></h5>
-                </div>
-                <div class="nav-element">
-                    <li><a href="#">ABOUT-US</a></li>
-                    <h5><span id="our-a">OUR-AMBITION</span></h5>
-                    <h5><span id="our-f">OUR-FOCUS</span></h5>
-                    <h5><span id="our-i">OUR-IMPACT</span></h5>
-                </div>
-                <div class="nav-element">
-                    <li><a href="contact.html">CONTACT-US</a></li>
-                </div>
-            </ul>
+          <ul>
+            <div class="nav-element">
+              <li><a href="{% url 'home' %}">HOME-DRIVIO</a></li>
+              <h5><a href="{% url 'home'%}"><span id="our-a">HOME</span></a></h5>
+            </div>
+            <div class="nav-element">
+              <li><a href="">SERVICS-DRIVIO.</a></li>
+              <h5><a href="{% url 'driver'%}"><span id="driver">DERIVER-SERVICE</span></a></h5>
+              <h5><a href="{%url 'owner'%}"><span id="owner">OWNER-SERVICE</span></a></h5>
+            </div>
+            <div class="nav-element">
+              <li><a href="{% url 'home'%}">ABOUT-US</a></li>
+              <h5><a href="#cards-container"><span id="our-a">OUR-AMBITION</span></a></h5>
+              <h5><a href="#cards-container"><span id="our-a">OUR-FOCUS</span></a></h5>
+              <h5><a href="#cards-container"><span id="our-a">OUR-IMPACT</span></a></h5>
+            
+            
+            </div>
+            <div class="nav-element">
+              <li><a href="contact.html">CONTACT-US</a></li>
+              <h5><span class="connect">CONNECT-WITH-US</span></h5>
+              <h5><span>GIVE-FEEDBACK</span></h5>
+            </div>
+          </ul>
         </div>
-        <button class="full-rounded">
-            <span>START</span>
-            <div class="border full-rounded"></div>
-        </button>
+    
+        
+        {% comment %} <button is="btn-start"> <a href="{% url 'register'%}"> START</a>
+          <div id="nav-bottom"></div>
+        </button> {% endcomment %}
+        <a href="{% url 'register'%}"> START</a>
+    
         <div id="nav-bottom"></div>
-    </nav>
-
+      </nav>
     <header class="section__container header__container" data-aos="fade-down">
         <div class="header__content">
             <h1>

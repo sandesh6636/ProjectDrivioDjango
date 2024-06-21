@@ -9,4 +9,5 @@ def driver(request):
      return render(request,'driving.html')
 
 
-
+def layout(request):
+     return render(request,'layout.html')

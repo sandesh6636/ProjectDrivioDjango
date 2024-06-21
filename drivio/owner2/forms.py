@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 class CarForm(ModelForm):
     class Meta:
         model=Cars
-        fields = '__all__'
+        fields = ['owner_name','owner_contact','location','car_name','payment_price','description','img']
 
 class UserRegistraitionForm(UserCreationForm):
     email = forms.EmailField()

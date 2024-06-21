@@ -12,6 +12,10 @@ def car_list(request):
     car=Cars.objects.all()
     return render(request,"all_cars.html" ,{'car':car})
 @login_required
+def my_car(request):
+    car=Cars.objects.all()
+    return render(request,"my_cars.html" ,{'car':car})
+@login_required
 def car_add(request):
     if request.method == "POST":
       form=CarForm(request.POST, request.FILES)
@@ -51,7 +55,7 @@ def register(request):
             form =UserRegistraitionForm(request.POST)
             if form.is_valid():
                 user =form.save(commit=False)
-                user.set_password(form.cleaned_data('password1'))
+                user.set_password(form.cleaned_data['password1'])
                 user.save()
                 login(request,user)
                 return redirect('car_list')

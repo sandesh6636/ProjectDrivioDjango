@@ -7,24 +7,8 @@ const btn_f = document.querySelector("#our-f");
 const btn_i = document.querySelector("#our-i");
 const btn_c = document.querySelector(".connect");
 const btn_o = document.querySelector("#owner");
-const btn_d = document.querySelector("#driver");
-const btn_start = document.querySelector("#start");
 
-// btn_start.addEventListener("click", () => {
-//   window.location.href = "login";
-// });
-// btn_a.addEventListener("click", () => {
-//   window.location.href = "#card1";
-// });
-// btn_f.addEventListener("click", () => {
-//   window.location.href = "#card2";
-// });
-// btn_o.addEventListener("click", () => {
-//   window.location.href = "{% url 'owner'%}";
-// });
-// btn_d.addEventListener("click", () => {
-//   window.location.href = "{% driver %}";
-// });
+
 
 document.addEventListener("mousemove", function (delts) {
   crs.style.left = delts.x + 20 + "px";

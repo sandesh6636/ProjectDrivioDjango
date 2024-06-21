@@ -29,8 +29,8 @@
             </div>
             {% endif %}
             {% endcomment %}
-
             {% for car in car %}
+            {% if car.user == user %}
             <div class="card mb-4 shadow-sm" style="background-color: #000; color:#ffff">
                 <div class="row g-0">
                     <div class="col-md-4">
@@ -48,18 +48,18 @@
                             </div>
                         </div>
                         <div class="card-footer bg-transparent d-flex justify-content-end">
-                            {% if car.user == user %}
+                           
                             <a href="{% url 'car_update' car.id %}" class="btn btn-warning me-2">
                                 <i class="fas fa-pen-square"></i> Edit
                             </a>
                             <a href="{% url 'car_delete' car.id %}" class="btn btn-danger" onclick="return confirm('Are You Sure Want to Delete This Car?')">
                                 <i class="fas fa-trash-alt"></i> Delete
                             </a>
-                            {% endif %}
                         </div>
                     </div>
                 </div>
             </div>
+            {% endif %}
             {% endfor %}
         </div>
     </div>

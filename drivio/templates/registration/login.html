@@ -1,13 +1,26 @@
 {% extends "layout2.html" %}
+{% load crispy_forms_tags %}
 
 
 {% block main_content %}
 <h2 class="text-center">Login form </h2>
-<form  method="post">
+{% comment %} <form  method="post">
     {% csrf_token %}
     {{form.as_p}}
-    <buttton class="btn btn-primary">Loign</buttton>
+    <button class="btn btn-primary">Loign</button>
 </form>
 <p>Dont have an account , register here <a href="{% url 'register'%}">Register</a>
-</p>
+</p> {% endcomment %}
+<div class="container">
+
+    <form action="" method="POST" class="shadow-lg p-3" >
+        {% csrf_token %}
+        {{ form | crispy }}
+        <div class="mt-3">
+            <button class="btn btn-primary" type="submit">Login</button>
+        </div>
+        <p>Dont have an accunt?, register  here <a href="{% url 'register'%}">Register</a>
+        </p>
+    </form>
+</div>
 {% endblock %}

@@ -7,8 +7,10 @@
     <title>{% block title %} default tittle {% endblock %}</title>
     {% block link %}{% endblock %}
     <link rel="stylesheet" href="{% static 'css/layout.css' %}" />
+    <link rel="shortcut icon" href="{% static 'img/fav.png'%}" type="image/x-icon">
   </head>
   <body>
+    
 
     {% block content %} {% endblock %}
     <footer class="footer">

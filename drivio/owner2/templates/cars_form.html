@@ -1,20 +1,31 @@
 {% extends "layout2.html" %}
-
+{% load crispy_forms_tags %}
 
 {% block main_content %}
 <h2>
     {% if form.instance.pk %}
-    Update Car
+    
+    <h2 class="text-center">Update Car</h2>
     {%else%}
-    Add Car
+    <h2 class="text-center">Add Car</h2>
     {%endif%}
 </h2>
-<form  method="post" enctype="multipart/form-data" class="form">
+{% comment %} <form  method="post" enctype="multipart/form-data" class="form">
     {% csrf_token %}
     {{form}}
     <div class="mt-3">
         <input type="submit" name="submit" value="Add Car" class="btn btn-primary">
     </div>
-</form>
+</form> {% endcomment %}
+<div class="container">
 
+    <form action="" method="POST" class="shadow-lg p-3" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form | crispy }}
+        <div class="mt-3">
+            <input type="submit" name="submit" value="Add Car" class="btn btn-success ">
+          
+        </div>
+    </form>
+</div>
 {% endblock %}
