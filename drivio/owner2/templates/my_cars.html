@@ -33,9 +33,11 @@
             {% if car.user == user %}
             <div class="card mb-4 shadow-sm" style="background-color: #000; color:#ffff">
                 <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="{{ car.img.url }}" class="img-fluid rounded-start" alt="{{ car.car_name }}">
+                    <div class="col-md-4 d-flex align-items-stretch">
+                        <img src="{{ car.img.url }}" class="img-fluid rounded-start w-90 h-90" style="object-fit: cover;" alt="{{ car.car_name }}">
                     </div>
+                    
+                    
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title text-uppercase text-center fs-2">{{ car.car_name }}</h5>
@@ -43,18 +45,19 @@
                                 <p class="card-text"><strong>Owner Name:</strong> {{ car.owner_name }}</p>
                                 <p class="card-text"><strong>Owner Contact:</strong> {{ car.owner_contact }}</p>
                                 <p class="card-text"><strong>Location:</strong> {{ car.location }}</p>
-                                <p class="card-text"><strong>Payment Amount:</strong> ${{ car.payment_price }}</p>
+                                <p class="card-text"><strong>Payment Amount per Hour:</strong> {{ car.payment_price }} NPR</p>
                                 <p class="card-text"><strong>Description:</strong> {{ car.description }}</p>
                             </div>
                         </div>
                         <div class="card-footer bg-transparent d-flex justify-content-end">
-                           
+                            {% if car.user == user %}
                             <a href="{% url 'car_update' car.id %}" class="btn btn-warning me-2">
                                 <i class="fas fa-pen-square"></i> Edit
                             </a>
                             <a href="{% url 'car_delete' car.id %}" class="btn btn-danger" onclick="return confirm('Are You Sure Want to Delete This Car?')">
                                 <i class="fas fa-trash-alt"></i> Delete
                             </a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

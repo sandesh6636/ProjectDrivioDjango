@@ -1,4 +1,5 @@
 {% extends 'layout2.html' %}
+{% block title %}DRIVIO -Cars in drvio{% endblock %}
 
 {% block main_content %}
 <div class="container mt-4" style=" color: white;">
@@ -33,9 +34,11 @@
             {% for car in car %}
             <div class="card mb-4 shadow-sm" style="background-color: #000; color:#ffff">
                 <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="{{ car.img.url }}" class="img-fluid rounded-start" alt="{{ car.car_name }}">
+                    <div class="col-md-4 d-flex align-items-stretch">
+                        <img src="{{ car.img.url }}" class="img-fluid rounded-start " style=" border-radius: 8px;" alt="{{ car.car_name }}">
                     </div>
+                    
+                    
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title text-uppercase text-center fs-2">{{ car.car_name }}</h5>
@@ -43,7 +46,7 @@
                                 <p class="card-text"><strong>Owner Name:</strong> {{ car.owner_name }}</p>
                                 <p class="card-text"><strong>Owner Contact:</strong> {{ car.owner_contact }}</p>
                                 <p class="card-text"><strong>Location:</strong> {{ car.location }}</p>
-                                <p class="card-text"><strong>Payment Amount:</strong> ${{ car.payment_price }}</p>
+                                <p class="card-text"><strong>Payment Amount per Hour:</strong> {{ car.payment_price }} NPR</p>
                                 <p class="card-text"><strong>Description:</strong> {{ car.description }}</p>
                             </div>
                         </div>

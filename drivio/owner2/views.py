@@ -4,6 +4,7 @@ from . forms import CarForm , UserRegistraitionForm
 from django.shortcuts import get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
+from django.views.generic import ListView, DetailView
 # Create your views here.
 def main2(request):
     return render(request, 'main2.html')
@@ -63,4 +64,12 @@ def register(request):
             form = UserRegistraitionForm()
         return render(request, 'registration/register.html',{'form':form})
 
-    
+
+class CarSearchView(ListView):
+    model = Cars
+    template_name = 'all_cars.html'
+    context_object_name = 'cars'
+
+    def get_queryset(self):
+        query = self.request.GET.get('search')
+        return Cars.objects.filter(car_name__icontains=query).order_by('-created_at')
