@@ -1,3 +1,4 @@
+
 from django.urls import path
 from . import views
 
@@ -13,4 +14,5 @@ urlpatterns = [
    path('<int:car_id>/delete/', views.car_delete, name='car_delete'),
    path('register/', views.register, name='register'),
    path('login/', views.login, name='login'),
+    path('search-cars/', views.CarSearchView.as_view(), name='search_cars'),
 ]
