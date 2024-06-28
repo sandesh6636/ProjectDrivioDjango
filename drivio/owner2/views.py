@@ -5,6 +5,7 @@ from django.shortcuts import get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
 from django.views.generic import ListView, DetailView
+
 # Create your views here.
 def main2(request):
     return render(request, 'main2.html')
@@ -64,6 +65,11 @@ def register(request):
             form = UserRegistraitionForm()
         return render(request, 'registration/register.html',{'form':form})
 
+def types(request):
+    return render(request,'types.html')
+
+def registerD(request):
+    return render(request, 'profileapp/homeP.html')
 
 class CarSearchView(ListView):
     model = Cars

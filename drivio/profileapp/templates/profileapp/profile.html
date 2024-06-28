@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="{% static 'css/profile1.css' %}">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="{% url 'home' %}" class="logo">Drivio..</a>
+            <div class="profile-container">
+                <a class="profile-icon-link-container" href="{% url 'home' %}">
+                    <img src="{% static 'img/default.png' %}" alt="profile-icon">
+                    <span class="header-username">Hello, {{ user.username }}</span>
+                </a>
+                <a class="profile-icon-link-container" href="{% url 'logout' %}">
+                    <div class="logout-button">Logout</div>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <h1 style="text-align: center;">User Profile</h1>
+        <div class="container">
+            <div class="profile-photo-container">
+                {% if user.profile.profile_img %}
+                    <img src="{{ user.profile.profile_img.url }}" alt="User Image" width="100px" srcset="">
+                {% else %}
+                    <img src="{% static 'img/default.png' %}" alt="User Image" width="100px" srcset="">
+                {% endif %}
+            </div>
+
+            <div class="user-content-container">
+                <p class="username">Name: {% if user.profile.name %}{{ user.profile.name }}{% else %}Not provided{% endif %}</p>
+                <p class="user-desc">Address: {% if user.profile.address %}{{ user.profile.address }}{% else %}Not provided{% endif %}</p>
+                <p class="user-desc">Phone: {% if user.profile.phone_number %}{{ user.profile.phone_number }}{% else %}Not provided{% endif %}</p>
+                <p class="user-desc">Experiences: {% if user.profile.experiences %}{{ user.profile.experiences }}{% else %}Not provided{% endif %}</p>
+                {% if user.profile.license_photo %}
+                    License Photo:<img src="{{ user.profile.license_photo.url }}" alt="license-photo" width="90px" srcset="">
+                {% else %}
+                    <img src="{% static 'img/licence.png' %}" alt="license-photo" width="90px" srcset="">
+                {% endif %} <br>
+                <p class="user-desc">Description: {% if user.profile.desc %}{{ user.profile.desc }}{% else %}Not provided{% endif %}</p><br>
+                <div class="profile-edit-link-container">
+                  <a href="{% url 'editprofile' %}">Edit</a>
+                </div>
+            </div>
+        </div>
+    </main>  
+</body>
+</html>

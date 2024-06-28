@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
      
-    
+     'profileapp',
     'owner2',
  
     'crispy_forms',

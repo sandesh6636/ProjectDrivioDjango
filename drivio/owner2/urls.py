@@ -13,6 +13,8 @@ urlpatterns = [
    path('<int:car_id>/update/', views.car_update, name='car_update'),
    path('<int:car_id>/delete/', views.car_delete, name='car_delete'),
    path('register/', views.register, name='register'),
+   path('registerD/', views.registerD, name='registerD'),
+   path('types/', views.types, name='types'),
    path('login/', views.login, name='login'),
     path('search-cars/', views.CarSearchView.as_view(), name='search_cars'),
 ]
