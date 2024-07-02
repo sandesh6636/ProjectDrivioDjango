@@ -40,7 +40,6 @@ INSTALLED_APPS = [
      
      'profileapp',
     'owner2',
- 
     'crispy_forms',
     "crispy_bootstrap5",
 ]
