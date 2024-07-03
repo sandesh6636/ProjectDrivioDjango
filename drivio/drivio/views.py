@@ -8,6 +8,8 @@ def owner(request):
 def driver(request):
      return render(request,'driving.html')
 
+def contact(request):
+     return render(request,'contact.html')
 
 def layout(request):
      return render(request,'layout.html')

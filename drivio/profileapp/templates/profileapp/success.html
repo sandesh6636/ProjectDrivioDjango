@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Success</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: white; /* Set the background color of the body to white */
+            color: black; /* Set text color to black */
+            height: 100vh; /* Ensure the body takes up the full viewport height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .gif-container {
+            background-color: #ffff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .gif-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .container {
+            text-align: center; /* Center align text */
+            margin-top: 20px; /* Add space at the top */
+        }
+        .container h1 {
+            color: black; /* Set heading color to black */
+        }
+        .container a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #28a745; /* Green button color */
+            color: white; /* Button text color */
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+        .container a:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="gif-container">
+            <img src="{% static 'img/contact2.gif' %}" alt="Your GIF">
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Thank you for your message!</h1>
+        <a href="{% url 'homeP' %}">Go back to homepage</a>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

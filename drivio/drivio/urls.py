@@ -28,6 +28,7 @@ urlpatterns = [
     path('owner/',views.owner,name="owner"),
     path('layout/',views.layout,name="layout"),
     path('driving/',views.driver,name="driver"),
+    # path('contact/',views.contact,name="contact"),
     
     # path('', include('owner.urls')),
     # path('', include('driver.urls')),

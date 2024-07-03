@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 from .models import Profile
 from django.forms.models import ModelForm
+from django import forms
 
 from django.forms.widgets import FileInput
 
@@ -21,3 +22,11 @@ class ProfileForm(ModelForm):
          'profile_img': FileInput(),
           'license_photo': FileInput(),
          }
+        
+
+
+
+class ContactForm(forms.Form):
+    name = forms.CharField(max_length=100)
+    email = forms.EmailField()
+    message = forms.CharField(widget=forms.Textarea)

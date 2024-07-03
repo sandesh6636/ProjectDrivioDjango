@@ -28,7 +28,7 @@
           <h5><a href="{% url 'home'%}"><span id="our-a">HOME</span></a></h5>
         </div>
         <div class="nav-element">
-          <li><a href="">SERVICS-DRIVIO.</a></li>
+          <li><a href="{% url 'driver'%}">SERVICS-DRIVIO.</a></li>
           <h5><a href="{% url 'driver'%}"><span id="driver">DERIVER-SERVICE</span></a></h5>
           <h5><a href="{%url 'owner'%}"><span id="owner">OWNER-SERVICE</span></a></h5>
         </div>
@@ -41,9 +41,9 @@
         
         </div>
         <div class="nav-element">
-          <li><a href="contact.html">CONTACT-US</a></li>
-          <h5><span class="connect">CONNECT-WITH-US</span></h5>
-          <h5><span>GIVE-FEEDBACK</span></h5>
+          <li><a href="{% url 'contact' %}">CONTACT-US</a></li>
+          <h5><a href="{%url 'contact'%}"><span id="owner">CONNECT-WITH-US</span></a></h5>
+      
         </div>
       </ul>
     </div>
