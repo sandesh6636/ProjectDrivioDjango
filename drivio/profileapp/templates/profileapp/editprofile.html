@@ -14,9 +14,13 @@
     <header>
         <nav class="navbar">
             <a href="{% url 'profile' %}" class="logo">Drivio..</a>
-            <a class="profile-icon-link-container" href="{% url 'logout' %}">
+            {% comment %} <a class="profile-icon-link-container" href="{% url 'logoutD' %}">
                 <div class="header-logout">Logout</div>
-            </a>
+            </a> {% endcomment %}
+            <form  method="post" action="{% url 'logout'%}">
+                {% csrf_token %}
+                <button class="btn btn-danger mx-2" type="submit">LOGOUT</button>
+              </form>
         </nav>
     </header>
 
