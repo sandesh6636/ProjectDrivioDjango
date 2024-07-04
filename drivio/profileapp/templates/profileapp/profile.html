@@ -11,50 +11,67 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a href="{% url 'home' %}" class="navbar-brand">Drivio..</a>
-            <div class="profile-container">
-                <a class="profile-icon-link-container" href="{% url 'homeP' %}">
-                    <span class="text-secondary">HOME</span>
-                </a>
-                <a class=" profile-icon-link-container" href="{% url 'logout' %}">
-                    <div class="logout-button">Logout</div>
-                </a>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a href="{% url 'home' %}" class="navbar-brand">Drivio</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'homeP' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <form id="logoutForm" method="post" action="{% url 'logoutD' %}" class="form-inline">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger">Logout</button>
+                        </form>
+                    </li>
+                </ul>
             </div>
         </nav>
     </header>
-    
 
     <main class="main-container">
-        <h1 style="text-align: center;">User Profile</h1>
-        <div class="container">
-            <div class="profile-photo-container">
-                {% if user.profile.profile_img %}
-                    <img src="{{ user.profile.profile_img.url }}" alt="User Image" width="100px">
-                {% else %}
-                    <img src="{% static 'img/default.png' %}" alt="User Image" width="100px">
-                {% endif %}
-            </div>
-
-            <div class="user-content-container">
-                <p class="username">Name: {% if user.profile.name %}{{ user.profile.name }}{% else %}Not provided{% endif %}</p>
-                <p class="user-desc">Address: {% if user.profile.address %}{{ user.profile.address }}{% else %}Not provided{% endif %}</p>
-                <p class="user-desc">Phone: {% if user.profile.phone_number %}{{ user.profile.phone_number }}{% else %}Not provided{% endif %}</p>
-                <p class="user-desc">Experiences: {% if user.profile.experiences %}{{ user.profile.experiences }}{% else %}Not provided{% endif %}</p>
-                {% if user.profile.license_photo %}
-                    <img src="{{ user.profile.license_photo.url }}" alt="license-photo" width="90px">
-                {% else %}
-                    <img src="{% static 'img/licence.png' %}" alt="license-photo" width="90px">
-                {% endif %} <br>
-                <p class="user-desc">Description: {% if user.profile.desc %}{{ user.profile.desc }}{% else %}Not provided{% endif %}</p><br>
-                <div class="profile-edit-link-container">
-                    <a  class="btn btn-success" href="{% url 'editprofile' %}">Edit</a>
+        <div class="container mt-5">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h1>User Profile</h1>
+                </div>
+                <div class="card-body text-center">
+                    <div class="profile-photo-container mb-3">
+                        {% if user.profile.profile_img %}
+                            <img src="{{ user.profile.profile_img.url }}" alt="User Image" class="profile-img">
+                        {% else %}
+                            <img src="{% static 'img/default.png' %}" alt="User Image" class="profile-img">
+                        {% endif %}
+                    </div>
+                    <div class="user-content-container">
+                        <p class="username"><strong>Name:</strong> {% if user.profile.name %}{{ user.profile.name }}{% else %}Not provided{% endif %}</p>
+                        <p class="user-desc"><strong>Address:</strong> {% if user.profile.address %}{{ user.profile.address }}{% else %}Not provided{% endif %}</p>
+                        <p class="user-desc"><strong>Phone:</strong> {% if user.profile.phone_number %}{{ user.profile.phone_number }}{% else %}Not provided{% endif %}</p>
+                        <p class="user-desc"><strong>Experiences:</strong> {% if user.profile.experiences %}{{ user.profile.experiences }}{% else %}Not provided{% endif %}</p>
+                        <p class="user-desc"><strong>Description:</strong> {% if user.profile.desc %}{{ user.profile.desc }}{% else %}Not provided{% endif %}</p>
+                        <div class="license-photo mt-3">
+                            {% if user.profile.license_photo %}
+                                <img src="{{ user.profile.license_photo.url }}" alt="License Photo" class="license-img">
+                            {% else %}
+                                <img src="{% static 'img/licence.png' %}" alt="License Photo" class="license-img">
+                            {% endif %}
+                        </div>
+                        <div class="profile-edit-link-container mt-3">
+                            <a class="btn btn-success" href="{% url 'editprofile' %}">Edit</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
 
     <!-- Bootstrap JS (optional, if needed) -->
-   
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 </body>
 </html>

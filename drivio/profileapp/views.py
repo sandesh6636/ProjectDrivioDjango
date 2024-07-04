@@ -83,9 +83,13 @@ def register_user(request):
 
 @login_required(login_url='loginD')
 def logout_user(request):
-    logout(request)
-    messages.info(request, 'You logged out successfully')
-    return redirect('loginD')
+    if request.method == 'POST':
+        logout(request)
+        messages.info(request, 'You logged out successfully')
+        return redirect('loginD')
+    else:
+        messages.error(request, 'Logout request must be a POST request.')
+        return redirect('homeP')
 
 
 
